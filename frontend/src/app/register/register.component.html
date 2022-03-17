@@ -1,0 +1,44 @@
+<section class="register">
+  <h3 class="register__title">Регистрация</h3>
+
+  <form
+    class="form__auth"
+    [formGroup]="form"
+    (ngSubmit)="onSubmit()"
+  >
+    <p class="form__input-text">Логин</p>
+    <input
+      formControlName="email"
+      type="text"
+      name="login"
+      class="form__input"
+      [ngClass]="{'form__input_invalid': form.controls['email'].invalid && form.controls['email'].touched}">
+    <span
+      class="form__error"
+      *ngIf="form.controls['email'].invalid && form.controls['email'].touched"
+    >
+      <span *ngIf="form.controls['email'].errors?.['required']">Email не должен быть пустым</span>
+      <span *ngIf="form.controls['email'].errors?.['email']">Некорректный email адрес</span>
+    </span>
+
+    <p class="form__input-text">Пароль</p>
+    <input
+      formControlName="password"
+      type="password"
+      name="password"
+      class="form__input"
+      [ngClass]="{'form__input_invalid': form.controls['password'].invalid && form.controls['password'].touched}"
+    >
+    <span
+      class="form__error"
+      *ngIf="form.controls['password'].invalid && form.controls['password'].touched"
+    >
+      <span *ngIf="form.controls['password'].errors?.['required']">Пароль не должен быть пустым</span>
+      <span *ngIf="form.controls['password'].errors?.['minlength']">
+        Пароль должен быть больше {{ form.controls['password'].errors?.['minlength']['requiredLength'] }} символов.
+        Сейчас {{ form.controls['password'].errors?.['minlength']['actualLength'] }}
+      </span>
+    </span>
+    <button type="submit" class="form__btn" [disabled]="form.invalid || form.disabled">Зарегистрироваться</button>
+  </form>
+</section>

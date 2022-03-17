@@ -1,0 +1,36 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;900&display=swap');
+
+html {
+  font-family: 'Roboto', sans-serif;
+}
+
+.menu {
+  border-top: 1px solid rgba(0, 0, 0, 0.7);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.7);
+
+  &__list {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: right;
+  }
+
+  &__item {
+    :hover {
+      opacity: .5;
+    }
+  }
+
+  &__link {
+    color: #000;
+    text-decoration: none;
+    padding: 0 25px;
+    transition: opacity .3s ease-in-out;
+
+    &_active {
+      color: rgb(90, 160, 88);
+    }
+  }
+}

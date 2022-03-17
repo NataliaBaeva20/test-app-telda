@@ -1,0 +1,31 @@
+.profile {
+  width: 100%;
+  padding: 70px 0 20px;
+}
+
+.profile__login {
+  font-size: 20px;
+  font-weight: 500;
+  margin: 0 0 40px;
+}
+
+.profile__login-accent {
+  font-weight: 400;
+}
+
+.profile__title {
+  margin: 0 0 20px;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.user {
+  margin: 0 0 10px;
+  padding: 10px 20px;
+  border: 1px rgba(0, 0, 0, 0.151) solid;
+
+
+  &__login {
+    margin: 0;
+  }
+}

@@ -1,0 +1,11 @@
+<section class="profile">
+  <h3 class="profile__login">Ваш логин: <span class="profile__login-accent">{{ login }}</span></h3>
+  <div class="profile__users">
+    <h3 class="profile__title">Пользователи системы</h3>
+    <div class="users">
+      <article class="user" *ngFor="let user of users; let idx=index">
+        <p class="user__login"><span>{{ idx + 1 }}:</span> {{ user.email }}</p>
+      </article>
+    </div>
+  </div>
+</section>
